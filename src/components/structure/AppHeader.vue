@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <header class="container bg-white border-b border-slate-500">
+  <div class="bg-white border-b border-slate-500">
+    <header class="container">
       <div class="py-2">BussinessSearch</div>
     </header>
   </div>
