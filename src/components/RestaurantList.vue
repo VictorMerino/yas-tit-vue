@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import RestaurantItem from './RestaurantItem.vue'
 defineProps<{
   restaurants: []
 }>()
@@ -7,7 +8,10 @@ defineProps<{
 <template>
   <div>
     Restaurants list cm<br />
-    <pre>{{ restaurants }}</pre>
+    <RestaurantItem
+      v-for="restaurant in restaurants"
+      :key="restaurant.id"
+      :restaurant="restaurant" />
   </div>
 </template>
 
