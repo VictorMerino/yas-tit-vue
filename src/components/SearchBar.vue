@@ -7,6 +7,7 @@ const emit = defineEmits<{
 
 const searchField = ref('')
 function searchText() {
+  if (!searchField.value) return
   emit('searchTerm', searchField.value)
 }
 </script>
@@ -20,4 +21,13 @@ function searchText() {
       @input="searchText" />
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+div {
+  margin-top: 12px;
+}
+input {
+  border-radius: 40px;
+  padding: 1em;
+  font-size: 20px;
+}
+</style>
