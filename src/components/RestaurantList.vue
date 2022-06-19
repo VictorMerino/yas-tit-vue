@@ -1,7 +1,14 @@
-<template>
-  <div>Restaurants list cm<br /></div>
-</template>
+<script setup lang="ts">
+defineProps<{
+  restaurants: []
+}>()
+</script>
 
-<script setup lang="ts"></script>
+<template>
+  <div>
+    Restaurants list cm<br />
+    <pre>{{ restaurants }}</pre>
+  </div>
+</template>
 
 <style scoped></style>
