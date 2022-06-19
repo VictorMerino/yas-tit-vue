@@ -1,5 +1,10 @@
+<script setup lang="ts">
+import Header from './components/structure/AppHeader.vue'
+</script>
 <template>
-  <header class="container">BussinessSearch</header>
+  <Header />
 
-  <RouterView />
+  <div>
+    <RouterView />
+  </div>
 </template>
