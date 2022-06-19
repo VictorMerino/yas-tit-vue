@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import SearchBar from '../components/SearchBar.vue'
+import RestaurantCategories from '../components/RestaurantCategories.vue'
+import RestaurantList from '../components/RestaurantList.vue'
 console.log('Home')
 </script>
 
@@ -9,10 +12,22 @@ console.log('Home')
       <br />
       <strong>delicious meal</strong>
     </h1>
-    <input type="search" name="restaurantType" id="restaurantType" />
+    <SearchBar />
     <br /><br />
-    Restaurant type selector <br />
+    <RestaurantCategories />
     Restaurants: <br />
-    Restaurants list <br />
+    <RestaurantList />
   </main>
 </template>
+
+<!-- <template>
+  <Header />
+  <Search setTerm={(term: string) => setActiveItem(term)}
+  activeItem={activeItem} />
+  <Categories
+    categories="{commonCategories}"
+    activeItem="{activeItem}"
+    setCategory="{setActiveItem}" />
+  <Restaurants term="{activeItem}" />
+  <StatusBar />
+</template> -->
