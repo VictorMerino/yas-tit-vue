@@ -9,7 +9,9 @@ export const useRestaurantsStore = defineStore({
   }),
   actions: {
     async searchByTerm(term: string) {
+      this.isLoading = true
       const { restaurants } = await searchRestaurant(term)
+      this.isLoading = false
       this.restaurantList = restaurants
     },
     setActiveCategory(activeCategory: '') {

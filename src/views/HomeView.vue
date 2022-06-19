@@ -15,6 +15,7 @@ const searchRestaurantsByTerm = async (term: string) =>
 
 <template>
   <main class="container">
+    Is loading? {{ restaurantsStore.isLoading }}
     <h1 class="text-3xl mt-4">
       Grab your
       <br />
