@@ -4,7 +4,7 @@ console.log('Home')
 
 <template>
   <main class="container">
-    <h1 class="text-3xl font-bold underline">
+    <h1 class="text-3xl mt-4">
       Grab your
       <br />
       <strong>delicious meal</strong>
