@@ -5,6 +5,7 @@ export const useRestaurantsStore = defineStore({
   state: () => ({
     restaurantList: [],
     activeCategory: '',
+    isLoading: false,
   }),
   actions: {
     async searchByTerm(term: string) {

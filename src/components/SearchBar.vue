@@ -17,13 +17,14 @@ function searchText() {
       type="search"
       name="restaurantType"
       id="restaurantType"
+      placeholder="Search restaurant type"
       v-model="searchField"
       @input="searchText" />
   </div>
 </template>
 <style scoped>
 div {
-  margin-top: 12px;
+  margin-top: 24px;
 }
 input {
   border-radius: 40px;

@@ -13,10 +13,9 @@ defineProps<{
     <CategoryItem
       v-for="category in categories"
       :key="category.name"
-      :category="category" />
+      :category="category"
+      :is-active="activeItem === category.name" />
   </div>
-
-  <div>Active Item: {{ activeItem }}</div>
 </template>
 
 <style>
