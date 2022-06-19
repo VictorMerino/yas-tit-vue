@@ -27,7 +27,7 @@ const yelp = () => {
 }
 
 const searchRestaurant = async (term = 'burger') => {
-  console.log('In search', term)
+  console.log('Search term: ', term)
   return await yelp().get('/search', {
     params: {
       limit: 12,
