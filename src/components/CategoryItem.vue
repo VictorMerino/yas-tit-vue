@@ -1,9 +1,16 @@
 <script setup lang="ts">
+import { useRestaurantsStore } from '@/stores/restaurants'
 import type { Item } from '@/types'
 
-defineProps<{
+const props = defineProps<{
   category: Item
 }>()
+
+const restaurantsStore = useRestaurantsStore()
+
+const handleClick = () => {
+  restaurantsStore.setActiveCategory(props.category.name)
+}
 </script>
 
 <template>
@@ -16,7 +23,8 @@ defineProps<{
       flex-direction: column;
       align-items: center;
       justify-content: center;
-    ">
+    "
+    @click="handleClick">
     <img :src="category.image" style="width: 50px; height: 50px" />
     <p>{{ category.name }}</p>
   </div>

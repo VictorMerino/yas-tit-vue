@@ -8,6 +8,7 @@ import { computed } from 'vue'
 
 const restaurantsStore = useRestaurantsStore()
 const restaurantList = computed(() => restaurantsStore.restaurantList)
+const activeItem = computed(() => restaurantsStore.activeCategory)
 const searchRestaurantsByTerm = async (term: string) =>
   restaurantsStore.searchByTerm(term)
 </script>
@@ -23,7 +24,7 @@ const searchRestaurantsByTerm = async (term: string) =>
     <br /><br />
     <RestaurantCategories
       :categories="commonCategories"
-      :active-item="{ name: 'steak', image: '' }" />
+      :active-item="activeItem" />
 
     <RestaurantList :restaurants="restaurantList.businesses" />
   </main>

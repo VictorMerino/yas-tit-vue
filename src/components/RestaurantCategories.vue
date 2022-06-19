@@ -23,5 +23,8 @@ defineProps<{
 .categories-wrapper {
   display: flex;
   gap: 2em;
+  max-width: 100vw;
+  margin-bottom: 1em;
+  overflow-x: auto;
 }
 </style>
