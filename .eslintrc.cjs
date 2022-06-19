@@ -25,8 +25,12 @@ module.exports = {
         printWidth: 80,
         trailingComma: 'none',
         bracketSameLine: true,
+        /* commaDangle: 0,
+        'comma-dangle': ['error', 'ignore'], */
         // "breakBeforeElse": true
       },
     ],
+
+    /* '@typescript-eslint/comma-dangle': 0, */
   },
 }
