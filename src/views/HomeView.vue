@@ -24,7 +24,6 @@ const searchRestaurantsByTerm = async (term: string) =>
     <RestaurantCategories
       :categories="commonCategories"
       :active-item="{ name: 'steak', image: '' }" />
-    Restaurants: <br />
 
     <RestaurantList :restaurants="restaurantList.businesses" />
   </main>

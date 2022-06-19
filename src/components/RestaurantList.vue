@@ -7,7 +7,7 @@ defineProps<{
 
 <template>
   <div>
-    Restaurants list cm<br />
+    <p class="mb-2">Restaurants:</p>
     <RestaurantItem
       v-for="restaurant in restaurants"
       :key="restaurant.id"
