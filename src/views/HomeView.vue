@@ -3,8 +3,8 @@ console.log('Home')
 </script>
 
 <template>
-  <main>
-    <h1>
+  <main class="container">
+    <h1 class="text-3xl font-bold underline">
       Grab your
       <br />
       <strong>delicious meal</strong>

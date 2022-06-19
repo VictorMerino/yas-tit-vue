@@ -1,5 +1,5 @@
 <template>
-  <header>BussinessSearch</header>
+  <header class="container">BussinessSearch</header>
 
   <RouterView />
 </template>
