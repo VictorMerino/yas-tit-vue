@@ -3,16 +3,13 @@ import SearchBar from '../components/SearchBar.vue'
 import RestaurantCategories from '../components/RestaurantCategories.vue'
 import RestaurantList from '../components/RestaurantList.vue'
 import { commonCategories } from '../db/common-categories'
-import { searchRestaurant } from '../services/searchRestaurant'
-import { ref } from 'vue'
-// import yelp from '@/api/yelp'
-console.log('Home')
-const restaurantList = ref([])
-const searchRestaurantsByTerm = async (term: string) => {
-  console.log(term)
-  const { restaurants } = await searchRestaurant(term)
-  restaurantList.value = restaurants
-}
+import { useRestaurantsStore } from '@/stores/restaurants'
+import { computed } from 'vue'
+
+const restaurantsStore = useRestaurantsStore()
+const restaurantList = computed(() => restaurantsStore.restaurantList)
+const searchRestaurantsByTerm = async (term: string) =>
+  restaurantsStore.searchByTerm(term)
 </script>
 
 <template>
