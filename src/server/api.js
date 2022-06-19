@@ -5,8 +5,6 @@ import axios from 'axios'
 import path from 'path'
 import cors from 'cors'
 
-// import yelp from '../api/yelp.js'
-
 const app = express()
 app.use(express.static(path.resolve(path.join('/public')))).use(cors())
 
@@ -28,19 +26,19 @@ const yelp = () => {
   })
 }
 
-const searchRestaurant = async (term = 'burger') =>
-  await yelp().get('/search', {
+const searchRestaurant = async (term = 'burger') => {
+  console.log('In search', term)
+  return await yelp().get('/search', {
     params: {
       limit: 12,
       term,
       location: 'Toronto',
     },
   })
+}
 
 app.get('/search-restaurant', async (req, res) => {
-  const response = await searchRestaurant()
-  console.log(response)
-  console.log(response.data)
+  const response = await searchRestaurant(req.query.term)
   res.json({ restaurants: response.data })
 })
 
