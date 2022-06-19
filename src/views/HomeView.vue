@@ -2,7 +2,20 @@
 import SearchBar from '../components/SearchBar.vue'
 import RestaurantCategories from '../components/RestaurantCategories.vue'
 import RestaurantList from '../components/RestaurantList.vue'
+import { commonCategories } from '../db/common-categories'
+import yelp from '@/api/yelp'
 console.log('Home')
+const searchRestaurantsByTerm = async (term: string) => {
+  console.log(term)
+  const response = await yelp.get('/search', {
+    params: {
+      limit: 12,
+      term,
+      location: 'Toronto'
+    }
+  })
+  console.log(response)
+}
 </script>
 
 <template>
@@ -12,10 +25,13 @@ console.log('Home')
       <br />
       <strong>delicious meal</strong>
     </h1>
-    <SearchBar />
+    <SearchBar @searchTerm="searchRestaurantsByTerm" />
     <br /><br />
-    <RestaurantCategories />
+    <RestaurantCategories
+      :categories="commonCategories"
+      :active-item="{ name: 'steak', image: '' }" />
     Restaurants: <br />
+
     <RestaurantList />
   </main>
 </template>
