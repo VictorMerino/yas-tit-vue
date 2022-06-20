@@ -37,9 +37,20 @@ const searchRestaurants = async (term = 'burger') => {
   })
 }
 
+const searchRestaurant = async (id) => {
+  console.log('Restaurant id: ', id)
+  return await yelp().get(`/${id}`)
+}
+
 app.get('/search-restaurants', async (req, res) => {
   const response = await searchRestaurants(req.query.term)
   res.json({ restaurants: response.data })
+})
+
+app.get('/search-restaurant', async (req, res) => {
+  const response = await searchRestaurant(req.query.id)
+  console.log(response)
+  // res.json({ restaurants: response.data })
 })
 
 app.listen(serverPort)

@@ -1,7 +1,14 @@
 <script setup lang="ts">
+import { searchRestaurant } from '@/services/searchRestaurants'
+import { onMounted } from 'vue'
+
 const props = defineProps<{
   id: string
 }>()
+
+onMounted(() => {
+  searchRestaurant(props.id)
+})
 </script>
 
 <template>
