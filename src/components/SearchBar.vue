@@ -25,6 +25,7 @@ watch(searchField, () => searchText())
       type="search"
       name="restaurantType"
       id="restaurantType"
+      data-testid="search-input"
       placeholder="Search restaurant type"
       v-model="searchField" />
   </div>
