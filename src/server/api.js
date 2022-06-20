@@ -49,8 +49,7 @@ app.get('/search-restaurants', async (req, res) => {
 
 app.get('/search-restaurant', async (req, res) => {
   const response = await searchRestaurant(req.query.id)
-  console.log(response)
-  // res.json({ restaurants: response.data })
+  res.json({ restaurant: response.data })
 })
 
 app.listen(serverPort)
