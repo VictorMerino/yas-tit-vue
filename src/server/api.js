@@ -26,7 +26,7 @@ const yelp = () => {
   })
 }
 
-const searchRestaurant = async (term = 'burger') => {
+const searchRestaurants = async (term = 'burger') => {
   console.log('Search term: ', term)
   return await yelp().get('/search', {
     params: {
@@ -37,8 +37,8 @@ const searchRestaurant = async (term = 'burger') => {
   })
 }
 
-app.get('/search-restaurant', async (req, res) => {
-  const response = await searchRestaurant(req.query.term)
+app.get('/search-restaurants', async (req, res) => {
+  const response = await searchRestaurants(req.query.term)
   res.json({ restaurants: response.data })
 })
 

@@ -1,4 +1,4 @@
-import { searchRestaurant } from '@/services/searchRestaurant'
+import { searchRestaurants } from '@/services/searchRestaurants'
 import { defineStore } from 'pinia'
 export const useRestaurantsStore = defineStore({
   id: 'restaurants',
@@ -10,7 +10,7 @@ export const useRestaurantsStore = defineStore({
   actions: {
     async searchByTerm(term: string) {
       this.isLoading = true
-      const { restaurants } = await searchRestaurant(term)
+      const { restaurants } = await searchRestaurants(term)
       this.isLoading = false
       this.restaurantList = restaurants
     },
