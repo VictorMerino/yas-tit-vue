@@ -10,7 +10,7 @@ const restaurantsStore = useRestaurantsStore()
 const restaurantList = computed(() => restaurantsStore.restaurantList)
 const activeItem = computed(() => restaurantsStore.activeCategory)
 const searchRestaurantsByTerm = async (term: string) =>
-  restaurantsStore.searchByTerm(term)
+  restaurantsStore.setActiveCategory(term)
 </script>
 
 <template>
