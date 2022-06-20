@@ -41,4 +41,7 @@ onMounted(() => {
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
 }
+.restaurant > img {
+  height: calc(100% / 1);
+}
 </style>
