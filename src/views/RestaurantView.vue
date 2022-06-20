@@ -1,6 +1,12 @@
+<script setup lang="ts">
+const props = defineProps<{
+  id: string
+}>()
+</script>
+
 <template>
-  <div class="restaurant">
-    <h1>This is the restaurant page</h1>
+  <div class="container my-2 restaurant">
+    <h1>This is the restaurant page {{ props.id }}</h1>
   </div>
 </template>
 

@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import router from '@/router'
 import type { Restaurant } from '@/types'
 
 defineProps<{
   restaurant: Restaurant
 }>()
 const goToRestaurant = (id: string) => {
-  console.log(id)
+  router.push({ name: 'restaurant', params: { id } })
 }
 </script>
 
