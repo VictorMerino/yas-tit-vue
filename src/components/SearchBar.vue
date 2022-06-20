@@ -1,15 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import useDebouncedRef from '@/composables/useDebouncedRef'
+import type { Item } from '@/types'
+import { watch } from 'vue'
+
+const props = defineProps<{
+  activeItem: Item
+}>()
 
 const emit = defineEmits<{
   (e: 'searchTerm', text: string): void
 }>()
 
-const searchField = ref('')
+const searchField = useDebouncedRef('', 400, false)
 function searchText() {
   if (!searchField.value) return
   emit('searchTerm', searchField.value)
 }
+watch(props, newProps => (searchField.value = props.activeItem))
+watch(searchField, newSearchField => searchText())
 </script>
 <template>
   <div>
@@ -18,8 +26,7 @@ function searchText() {
       name="restaurantType"
       id="restaurantType"
       placeholder="Search restaurant type"
-      v-model="searchField"
-      @input="searchText" />
+      v-model="searchField" />
   </div>
 </template>
 <style scoped>
