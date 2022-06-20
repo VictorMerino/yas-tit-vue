@@ -14,7 +14,7 @@ export const useRestaurantsStore = defineStore({
       this.isLoading = false
       this.restaurantList = restaurants
     },
-    setActiveCategory(activeCategory: '') {
+    setActiveCategory(activeCategory = '') {
       this.activeCategory = activeCategory
       this.searchByTerm(activeCategory)
     },
