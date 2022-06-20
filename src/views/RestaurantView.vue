@@ -43,5 +43,6 @@ onMounted(() => {
 }
 .restaurant > img {
   height: calc(100% / 1);
+  object-fit: cover;
 }
 </style>
