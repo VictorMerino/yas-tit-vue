@@ -16,8 +16,8 @@ function searchText() {
   if (!searchField.value) return
   emit('searchTerm', searchField.value)
 }
-watch(props, newProps => (searchField.value = props.activeItem))
-watch(searchField, newSearchField => searchText())
+watch(props, () => (searchField.value = props.activeItem))
+watch(searchField, () => searchText())
 </script>
 <template>
   <div>
