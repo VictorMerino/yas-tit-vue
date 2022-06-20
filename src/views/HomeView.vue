@@ -15,7 +15,6 @@ const searchRestaurantsByTerm = async (term: string) =>
 
 <template>
   <main class="container">
-    <div class="loading" v-if="restaurantsStore.isLoading" />
     <h1 class="text-3xl mt-4">
       Grab your
       <br />

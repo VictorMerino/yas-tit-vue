@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import router from '@/router'
+import { useRestaurantsStore } from '@/stores/restaurants'
 import type { Restaurant } from '@/types'
 
 defineProps<{
@@ -7,6 +8,7 @@ defineProps<{
 }>()
 const goToRestaurant = (id: string) => {
   router.push({ name: 'restaurant', params: { id } })
+  useRestaurantsStore().isLoading = true
 }
 </script>
 

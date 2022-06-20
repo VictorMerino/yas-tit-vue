@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import { searchRestaurant } from '@/services/searchRestaurants'
+import { useRestaurantsStore } from '@/stores/restaurants'
 import { onMounted, ref } from 'vue'
 
 const props = defineProps<{
   id: string
 }>()
+
+const restaurantsStore = useRestaurantsStore()
 const restaurantPhotos = ref({})
 const restaurantName = ref('')
 onMounted(() => {
+  restaurantsStore.isLoading = true
   searchRestaurant(props.id).then(restaurant => {
-    console.log(restaurant)
-    console.log(restaurant.restaurant)
     restaurantPhotos.value = restaurant.restaurant.photos
     restaurantName.value = restaurant.restaurant.name
+    restaurantsStore.isLoading = false
   })
 })
 </script>
