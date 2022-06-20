@@ -21,13 +21,17 @@ const searchRestaurantsByTerm = async (term: string) =>
       <br />
       <strong>delicious meal</strong>
     </h1>
-    <SearchBar @searchTerm="searchRestaurantsByTerm" />
+    <SearchBar
+      @searchTerm="searchRestaurantsByTerm"
+      :active-item="activeItem" />
     <br /><br />
     <RestaurantCategories
       :categories="commonCategories"
       :active-item="activeItem" />
 
-    <RestaurantList :restaurants="restaurantList.businesses" />
+    <RestaurantList
+      v-if="restaurantList && restaurantList.businesses"
+      :restaurants="restaurantList.businesses" />
   </main>
 </template>
 
