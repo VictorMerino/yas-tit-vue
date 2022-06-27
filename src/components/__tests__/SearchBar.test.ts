@@ -17,3 +17,8 @@ test('increments value on click', async () => {
   // Dispatch a native click event to our button element.
   // await fireEvent.update(inputField, 'Pizza')
 })
+
+test.todo('Shows restaurnt list on successful query')
+test.todo('Shows error on network error')
+test.todo('Shows warning on non found query')
+test.todo('Navigate to restaurant page and show the three images')
