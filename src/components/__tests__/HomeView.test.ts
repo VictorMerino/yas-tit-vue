@@ -14,14 +14,17 @@ describe('HomeView', () => {
     // `useStore(pinia)`
     setActivePinia(createPinia())
   })
+
   test('Shows active category on text input coincidence', async () => {
     const { findByText, queryByText } = render(HomeView, {
       global: { plugins: [createTestingPinia({ createSpy: vitest.fn })] },
     })
     // findByText('Graby')
     const burger = queryByText('burger')
-    // console.log(burger.attributes)
+    // console.log(burger?.innerHTML)
     expect(burger).toBeInTheDocument()
+    expect(burger).toBeVisible()
   })
+
   test.todo('Shows text on input field when selecting coincident category')
 })
